@@ -60,20 +60,22 @@ const App = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-4">
-      <div className="p-4">
-        <DropdownBox
-          mentors={mentors}
-          onFilterChange={handleFilterChange}
-          filters={filters}
-        />
-      </div>
-      <div className="flex flex-col overflow-y-auto max-h-screen">
-        {filteredMentors.map((mentor) => (
-          <div key={mentor.id} className="mb-4">
-            <MentorCard mentor={mentor} />
-          </div>
-        ))}
+    <div className="bg-[#99CAC3]">
+      <div className="container mx-auto px-4 py-4">
+        <div className="p-4">
+          <DropdownBox
+            mentors={mentors}
+            onFilterChange={handleFilterChange}
+            filters={filters}
+          />
+        </div>
+        <div className="flex flex-col overflow-y-auto max-h-screen">
+          {filteredMentors.map((mentor) => (
+            <div key={mentor.id} className="mb-4">
+              <MentorCard mentor={mentor} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

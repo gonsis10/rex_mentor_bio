@@ -44,7 +44,7 @@ const DropdownBox = ({ mentors, onFilterChange, filters }) => {
   }, [mentors, filters]);
 
   return (
-    <div className="bg-gradient-to-r from-cyan-300 to-blue-300 p-4 shadow-lg rounded-lg flex justify-between items-center space-x-4">
+    <div className="bg-[#56A79B] p-4 shadow-lg rounded-lg flex justify-between items-center space-x-4">
       <Dropdown
         label="Faculty"
         options={availableOptions.faculty}
