@@ -60,8 +60,8 @@ const App = () => {
   );
 
   return (
-    <div className="bg-[#99CAC3]">
-      <div className="container mx-auto px-4 py-4">
+    <div className="bg-[#99CAC3] h-screen w-screen">
+      <div className="flex flex-col h-full">
         <div className="p-4">
           <DropdownBox
             mentors={mentors}
@@ -69,7 +69,7 @@ const App = () => {
             filters={filters}
           />
         </div>
-        <div className="flex flex-col overflow-y-auto max-h-screen">
+        <div className="flex-1 overflow-y-auto p-4">
           {filteredMentors.map((mentor) => (
             <div key={mentor.id} className="mb-4">
               <MentorCard mentor={mentor} />
