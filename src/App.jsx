@@ -10,6 +10,7 @@ const App = () => {
     faculty: [],
     meetingFormat: [],
     researchField: [],
+    projectType: [],
   });
 
   useEffect(() => {
@@ -57,6 +58,9 @@ const App = () => {
         ? filters.researchField.some((field) =>
             mentor.researchField.includes(field)
           )
+        : true) &&
+      (filters.projectType.length > 0
+        ? filters.projectType.includes(mentor.projectType)
         : true)
   );
 

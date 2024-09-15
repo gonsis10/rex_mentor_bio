@@ -5,6 +5,9 @@ const MentorCard = ({ mentor }) => {
     <div className="rounded-lg overflow-hidden shadow-lg m-4 p-6 bg-white">
       <h3 className="font-bold text-xl mb-4 text-gray-900">{mentor.name}</h3>
       <div className="space-y-3">
+      <p className="text-gray-700">
+          <strong>Mentor ID:</strong> {mentor.id}
+        </p>
         <p className="text-gray-700">
           <strong>Faculty:</strong> {mentor.faculty}
         </p>

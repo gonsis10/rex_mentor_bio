@@ -6,6 +6,7 @@ const DropdownBox = ({ mentors, onFilterChange, filters }) => {
     faculty: [],
     meetingFormat: [],
     researchField: [],
+    projectType: [],
   });
 
   useEffect(() => {
@@ -25,6 +26,9 @@ const DropdownBox = ({ mentors, onFilterChange, filters }) => {
           ? filters.researchField.some((field) =>
               mentor.researchField.includes(field)
             )
+          : true) &&
+        (filters.projectType.length > 0
+          ? filters.projectType.includes(mentor.projectType)
           : true)
     );
 
@@ -36,10 +40,15 @@ const DropdownBox = ({ mentors, onFilterChange, filters }) => {
       ...new Set(filteredMentors.map((item) => item.researchField)),
     ];
 
+    const availableProjectTypes = [
+      ...new Set(filteredMentors.map((item) => item.projectType)),
+    ];
+
     setAvailableOptions({
       faculty: allFacultyOptions, // Show all faculties regardless of other filters
       meetingFormat: availableMeetingFormats,
       researchField: availableResearchFields,
+      projectType: availableProjectTypes,
     });
   }, [mentors, filters]);
 
@@ -58,6 +67,13 @@ const DropdownBox = ({ mentors, onFilterChange, filters }) => {
         selectedOptions={filters.meetingFormat}
         onChange={onFilterChange}
         filterKey="meetingFormat"
+      />
+      <Dropdown
+        label="Project Type"
+        options={availableOptions.projectType}
+        selectedOptions={filters.projectType}
+        onChange={onFilterChange}
+        filterKey="projectType"
       />
       <Dropdown
         label="Research Field"
