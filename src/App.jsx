@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { csv } from "d3";
 import { getValueByPartialKey } from "./utils/utils";
 import DropdownBox from "./components/DropdownBox";
@@ -13,7 +13,7 @@ const App = () => {
   });
 
   useEffect(() => {
-    csv("/demo1.csv").then((data) => {
+    csv("/final.csv").then((data) => {
       setMentors(
         data.slice(1).map((row) => ({
           name: row["First Name"] + " " + row["Last Name"],
@@ -22,8 +22,9 @@ const App = () => {
             row["Faculty - Selected Choice"] === "Other (Please state below):"
               ? row["Faculty - Other (Please state below): - Text"]
               : row["Faculty - Selected Choice"],
-          researchField: row["Field of Research"],
-          meetingFormat: row["Individual or group project"],
+          researchField: row["Field of research"],
+          projectType: row["Group or individual projects"],
+          meetingFormat: row["Meeting format"],
           summary:
             row["Provide a quick summary of your research (200 words max)"],
           menteeGoals: getValueByPartialKey(

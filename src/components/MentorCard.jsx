@@ -12,7 +12,11 @@ const MentorCard = ({ mentor }) => {
           <strong>Field of Research:</strong> {mentor.researchField}
         </p>
         <p className="text-gray-700">
-          <strong>Meeting Format:</strong> {mentor.meetingFormat}
+          <strong>Project Type:</strong> {mentor.projectType}
+        </p>
+        <p className="text-gray-700">
+          <strong>Meeting Format (Online/ In-person):</strong>{" "}
+          {mentor.meetingFormat}
         </p>
         <p className="text-gray-700">
           <strong>Summary of Research:</strong> {mentor.summary}
