@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     csv("/final.csv").then((data) => {
       setMentors(
-        data.slice(1).map((row) => ({
+        data.slice(0).map((row) => ({
           name: row["First Name"] + " " + row["Last Name"],
           id: row["Mentor ID"],
           faculty:
