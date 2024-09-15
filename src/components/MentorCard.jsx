@@ -2,10 +2,23 @@ import React from "react";
 
 const MentorCard = ({ mentor }) => {
   return (
-    <div className="rounded-lg overflow-hidden shadow-lg m-4 p-6 bg-white">
+    <div className="relative rounded-lg overflow-hidden shadow-lg m-4 p-6 bg-white">
+      <div className="absolute top-0 right-0 m-2 flex space-x-2">
+        <img
+          src="logo.png" 
+          alt="Mentor Badge 1"
+          className="w-16 h-12"
+        />
+        <img
+          src="dino.png" 
+          alt="Mentor Badge 2"
+          className="w-12 h-12"
+        />
+      </div>
+
       <h3 className="font-bold text-xl mb-4 text-gray-900">{mentor.name}</h3>
       <div className="space-y-3">
-      <p className="text-gray-700">
+        <p className="text-gray-700">
           <strong>Mentor ID:</strong> {mentor.id}
         </p>
         <p className="text-gray-700">
